@@ -179,14 +179,118 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
 .footer-copy{font-size:.66rem;color:var(--muted);letter-spacing:.05em}
 .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){
-  nav{padding:16px 22px}
-  .hero-inner,.srv-header,.res-header,.why-inner{grid-template-columns:1fr;gap:36px;padding:0 22px}
-  .container{padding:0 22px}
-  .srv-grid{grid-template-columns:1fr}
+/* ── TABLET ── */
+@media(max-width:1024px){
+  .container{padding:0 32px}
+  .hero-inner{padding:0 32px;gap:48px}
+  .srv-grid{grid-template-columns:1fr 1fr}
   .res-grid{grid-template-columns:1fr 1fr}
-  .proj-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:14px;text-align:center;padding:24px}
+  .flow-row{flex-wrap:wrap;gap:10px;justify-content:center}
+  .flow-arrow{display:none}
+}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  /* NAV */
+  nav{padding:14px 20px}
+  .nav-logo{font-size:1rem}
+  .nav-wa{padding:9px 16px;font-size:.68rem}
+  .nav-wa span.wa-text{display:none}
+
+  /* CONTAINER */
+  .container{padding:0 20px}
+
+  /* HERO */
+  #hero{padding:100px 0 60px;min-height:auto}
+  .hero-inner{grid-template-columns:1fr;gap:32px;padding:0 20px;text-align:center}
+  .hero-badge{font-size:.62rem;padding:6px 14px}
+  h1.hero-title{font-size:clamp(1.9rem,7vw,2.8rem)}
+  .hero-desc{font-size:.88rem;max-width:100%;margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .btn-p,.btn-g{padding:12px 24px;font-size:.72rem;width:100%;justify-content:center}
+  .hero-right{order:-1}
+  .dp-wrap{width:160px;height:160px}
+  .dp-wrap img{width:160px;height:160px}
+  .dp-badge{font-size:.55rem;padding:4px 10px;right:-5px;bottom:6px}
+  .stats-row{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .stat-num{font-size:1.4rem}
+  .stat-lbl{font-size:.55rem}
+  .stat-c{padding:14px 10px}
+
+  /* TICKER */
+  #ticker{padding:28px 0}
+  .tick-item{font-size:.82rem}
+
+  /* SERVICES */
+  #services{padding:70px 0}
+  .srv-header{grid-template-columns:1fr;gap:16px;margin-bottom:40px}
+  .srv-grid{grid-template-columns:1fr;gap:0}
+  .srv-card{padding:28px 22px}
+  h2.sec-title{font-size:clamp(1.6rem,6vw,2.2rem)}
+
+  /* WORKFLOW */
+  #workflow{padding:70px 0}
+  .wf-header{margin-bottom:40px}
+  #workflow > .container > div[style*="grid-template-columns:1fr 1fr"]{
+    display:flex;flex-direction:column;gap:32px
+  }
+  .fn-box{padding:14px 18px;gap:14px}
+  .fn-icon{width:38px;height:38px;font-size:.9rem;flex-shrink:0}
+  .fn-title{font-size:.82rem}
+  .fn-desc{font-size:.7rem}
+
+  /* FLOW DIAGRAM */
+  .flow-diagram{padding:24px 18px}
+  .flow-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+  .flow-arrow{display:none}
+  .flow-node{min-width:unset;padding:10px 12px}
+  .flow-node span{font-size:.65rem}
+  .flow-node sub{font-size:.55rem}
+  .flow-node i{font-size:.95rem;margin-bottom:4px}
+
+  /* RESULTS */
+  #results{padding:70px 0}
+  .res-header{grid-template-columns:1fr;gap:16px;margin-bottom:40px}
+  .res-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .res-num{font-size:1.8rem}
+  .res-card{padding:22px 16px}
+
+  /* PROJECTS */
+  #projects{padding:70px 0}
+  .proj-grid{grid-template-columns:1fr;gap:20px}
+  .proj-header{margin-bottom:40px}
+  .proj-body{padding:18px 20px}
+  .proj-name{font-size:.92rem}
+
+  /* EXPERTISE */
+  #expertise{padding:50px 0}
+
+  /* WHY */
+  #why{padding:70px 0}
+  .why-inner{grid-template-columns:1fr;gap:40px}
+  blockquote.pull{font-size:1.2rem}
+  .why-item{padding:16px}
+
+  /* CTA */
+  #cta{padding:80px 0}
+  h2.cta-title{font-size:clamp(1.7rem,6vw,3rem)}
+  .cta-sub{font-size:.88rem}
+  .btn-wa-big,.btn-outline-big{padding:15px 28px;font-size:.76rem;width:100%;justify-content:center}
+  .cta-actions{flex-direction:column;align-items:center;gap:12px}
+
+  /* FOOTER */
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px}
+  .footer-copy{font-size:.62rem}
+}
+
+/* ── SMALL MOBILE ── */
+@media(max-width:420px){
+  h1.hero-title{font-size:1.8rem}
+  .stats-row{grid-template-columns:1fr 1fr 1fr}
+  .stat-num{font-size:1.2rem}
+  .res-grid{grid-template-columns:1fr}
+  .flow-row{grid-template-columns:1fr 1fr 1fr}
+  .nav-wa{padding:8px 12px}
 }
 </style>
 </head>
@@ -198,7 +302,7 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
 
 <nav>
   <div class="nav-logo">Nawazish<span>.</span>Tawab</div>
-  <a href="https://wa.me/923325404490" target="_blank" class="nav-wa"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+  <a href="https://wa.me/923325404490" target="_blank" class="nav-wa"><i class="fab fa-whatsapp"></i><span class="wa-text"> WhatsApp Me</span></a>
 </nav>
 
 <section id="hero">
